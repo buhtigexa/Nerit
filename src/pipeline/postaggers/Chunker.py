@@ -53,7 +53,6 @@ class RegexpChunker(Chunker):
 		iobs=None
 		try:
 			parsedTree=self.chunker.parse(data)
-			print parsedTree
 			iobs= tree2conlltags(parsedTree)
 		
 		except Exception,e:
