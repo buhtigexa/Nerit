@@ -2,24 +2,23 @@
 # -*- coding: UTF-8 -*
 import ConfigParser
 from Menu import Menu
-from LinuxPrinter import LinuxPrinter
+from WindowsPrinter import WindowsPrinter
+class NeritWin(Menu):
 
-class Nerit(Menu):
+	""" Clase cliente ejecutable para Windows"""
 
-	""" Clase cliente ejecutable para Linux"""
-	
 
-	def __init__(self,config_file='../config/nerit.ini'):
-		super(Nerit,self).__init__(config_file)
+	def __init__(self,config_file='..\\config\\nerit_win.ini'):
+		super(NeritWin,self).__init__(config_file)
 
 	def getConfig(self):
 		
 		config = ConfigParser.RawConfigParser()
 		config.optionxform = str 
-		self.final_stage=LinuxPrinter()
+		self.final_stage=WindowsPrinter()
 		config.read(self.config_file)
 		return config
 
-menu=Nerit()
+menu=NeritWin()
 config=menu.getConfig()
 menu.show_menu(config)
