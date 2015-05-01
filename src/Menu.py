@@ -103,7 +103,7 @@ class Menu(object):
 
 		except Exception,e:
 			print str(e)
-			pdb.set_trace()	
+			#pdb.set_trace()	
 			
 
 	def getDataLineConnection(self,line_file_path):
@@ -159,7 +159,7 @@ class Menu(object):
 			connection=None
 			option=sys.argv[1]
 			if option=='--h':
-				usage()
+				self.usage()
 			if option=='-cpt':
 				# crear POS Tagger 
 				if len(sys.argv)==3:
