@@ -195,7 +195,7 @@ class Menu(object):
 					corpus_cf=sys.argv[2]
 				connection=self.getJSONFileConnection(corpus_cf)
 			else:
-				usage()	
+				self.usage()	
 
 			if connection:
 				self.final_stage.set_target_chunks(phrases_to_print)
